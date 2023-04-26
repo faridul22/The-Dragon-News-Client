@@ -3,6 +3,8 @@ import Header from '../pages/Shared/Header/Header';
 import Footer from '../pages/Shared/Footer/Footer';
 import { Col, Container, Row } from 'react-bootstrap';
 import RightNav from '../pages/Shared/RightNav/RightNav';
+import LeftNav from '../pages/Shared/LeftNav/LeftNav';
+import Home from '../pages/Home/Home/Home';
 
 const Main = () => {
     return (
@@ -11,10 +13,10 @@ const Main = () => {
             <Container>
                 <Row>
                     <Col lg={3}>
-                        <h4>Left navbar</h4>
+                        <LeftNav></LeftNav>
                     </Col>
                     <Col lg={6}>
-                        <h2>Main content comeing</h2>
+                        <Home></Home>
                     </Col>
                     <Col lg={3}>
                         <RightNav></RightNav>
