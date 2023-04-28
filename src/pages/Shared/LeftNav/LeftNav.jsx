@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import AllNews from '../../Home/AllNews/AllNews';
 
 const LeftNav = () => {
     const [categories, setCategories] = useState([]);
@@ -9,7 +10,6 @@ const LeftNav = () => {
             .then(data => setCategories(data))
             .catch(error => console.log(error))
     }, [])
-    console.log(categories)
     return (
         <div>
             <h5>All Category</h5>
@@ -23,6 +23,8 @@ const LeftNav = () => {
                     </p>)
                 }
             </div>
+            <h6 className='text-muted mx-auto mb-3'>All News</h6>
+            <AllNews></AllNews>
         </div>
     );
 };
