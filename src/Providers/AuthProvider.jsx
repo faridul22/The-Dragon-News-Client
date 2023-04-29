@@ -10,7 +10,7 @@ const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
 }
 const AuthProvider = ({ children }) => {
-    const user = { displayName: 'Faird' }
+    const user = (null)
     const authInfo = {
         user,
         createUser,
