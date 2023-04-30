@@ -8,6 +8,7 @@ import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import LoginLayout from "../layouts/LoginLayout";
 import PrivateRoute from "./PrivateRoute";
+import Trams from "../pages/Shared/Trams/Trams";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register></Register>
+            },
+            {
+                path: 'trams',
+                element: <Trams></Trams>
             }
         ]
     },

@@ -1,13 +1,20 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../Providers/AuthProvider';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
+import { Spinner } from 'react-bootstrap';
 
 const PrivateRoute = ({ children }) => {
-    const { user } = useContext(AuthContext);
-    if (user) {
+
+    const { user, loading } = useContext(AuthContext);
+    let location = useLocation();
+    console.log('user in private route', user)
+    if (loading) {
+        return <Spinner animation="border" variant="primary" />
+    }
+    else if (user) {
         return children
     }
-    return <Navigate to="/login" replace></Navigate>;
+    return <Navigate to="/login" state={{ from: location }} replace />;
 };
 
 export default PrivateRoute;
@@ -19,6 +26,7 @@ export default PrivateRoute;
  * 1. Check user is logged in or not
  * 2. if user is logged in, then allow them to visit the route
  * 3. else redirect the user to the login page
- * 
+ * 4. set up the private router
+ * 5. handle Loading
  * 
  * **/
